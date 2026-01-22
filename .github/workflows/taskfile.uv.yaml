@@ -42,13 +42,5 @@ jobs:
           version: 3.x
           repo-token: ${{ github.token }}
 
-      - name: Cache venv (.venv)
-        uses: actions/cache@master
-        with:
-          path: .venv
-          key: ${{ runner.os }}-venv-${{ hashFiles('uv.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-venv-
-
       - name: Run Task
         run: task ${{ inputs.task_target }}
