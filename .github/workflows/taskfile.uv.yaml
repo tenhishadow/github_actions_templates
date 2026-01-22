@@ -34,6 +34,7 @@ jobs:
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
+          tool-bin-dir: "/bin"
 
       - name: Install Task
         uses: arduino/setup-task@v2
